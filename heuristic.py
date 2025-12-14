@@ -99,10 +99,7 @@ class CRRHeuristic():
         # if self.verbose:
         #     print('>>> Solving optimization model')
 
-        optim = SolverFactory(
-            "gurobi",
-            executable="/opt/gurobi1300/linux64/bin/gurobi_cl"
-        )
+        optim = SolverFactory(self.solver_name)
 
         start_time = time.time()
 
@@ -190,10 +187,7 @@ class CRRHeuristic():
         if self.verbose:
             print(">>> Solving optimization model")
 
-        solver = SolverFactory(
-            "gurobi",
-            executable="/opt/gurobi1300/linux64/bin/gurobi_cl"
-        )
+        solver = SolverFactory(self.solver_name)
 
         start_time = time.time()
         results_step1_no_overlap = solver.solve(model_step1_no_overlap)
@@ -275,10 +269,7 @@ class CRRHeuristic():
         if self.verbose:
             print(">>> Solving optimization model")
 
-        solver = SolverFactory(
-            "gurobi",
-            executable="/opt/gurobi1300/linux64/bin/gurobi_cl"
-        )
+        solver = SolverFactory(self.solver_name)
 
         start_time = time.time()
         results_step1_overlap = solver.solve(model_step1_overlap)
@@ -366,10 +357,7 @@ class CRRHeuristic():
             if self.verbose:
                 print('>>> Solving optimization model')
 
-            optim = SolverFactory(
-                "gurobi",
-                executable="/opt/gurobi1300/linux64/bin/gurobi_cl"
-            )
+            optim = SolverFactory(self.solver_name)
 
             start_time = time.time()
 
@@ -535,10 +523,7 @@ class CRRHeuristic():
         if self.verbose:
             print('>>> Solving MP model')
 
-        optim = SolverFactory(
-            "gurobi",
-            executable="/opt/gurobi1300/linux64/bin/gurobi_cl"
-        )
+        optim = SolverFactory(self.solver_name)
 
         start_time = time.time()
         results = optim.solve(MP_model)
@@ -615,10 +600,7 @@ class CRRHeuristic():
         if self.verbose:
             print('>>> Solving SP model')
 
-        optim = SolverFactory(
-            "gurobi",
-            executable="/opt/gurobi1300/linux64/bin/gurobi_cl"
-        )
+        optim = SolverFactory(self.solver_name)
 
         start_time = time.time()
         results = optim.solve(SP_model)
@@ -870,10 +852,7 @@ class CRRHeuristic():
         if self.verbose:
             print('>>> Solving linearized CRR model')
 
-        optim = SolverFactory(
-            "gurobi",
-            executable="/opt/gurobi1300/linux64/bin/gurobi_cl"
-        )
+        optim = SolverFactory(self.solver_name)
 
         start_time = time.time()
         results = optim.solve(linear_model)
